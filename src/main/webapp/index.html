@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Explorando o Protocolo HTTP</title>
+</head>
+
+<body>
+
+    <h1>Explorando o Protocolo HTTP com Java Servlets</h1>
+
+    <p>Atividade de Tecnologias de Desenvolvimento
+       para Internet III</p>
+
+    <hr>
+
+    <h2>Exercicios</h2>
+
+    <h3>1 - Analise de Cabecalhos HTTP</h3>
+    <p>
+        <a href="headers">Acessar Servlet 1</a>
+    </p>
+
+    <h3>2 - Corpo da Requisicao POST</h3>
+    <p>
+        <a href="form.html">Acessar Servlet 2</a>
+    </p>
+
+    <h3>3 - Cookies e Identificacao do Usuario</h3>
+    <p>
+        <a href="session">Acessar Servlet 3</a>
+    </p>
+
+    <h3>4 - Testes de Status HTTP</h3>
+    <p>
+        <a href="status?code=200">Testar 200</a> |
+        <a href="status?code=404">Testar 404</a> |
+        <a href="status?code=500">Testar 500</a>
+    </p>
+
+    <h3>5 - Metodos HTTP Suportados</h3>
+    <p>
+        <a href="javascript:void(0)"
+           onclick="testarOptions()">Testar OPTIONS</a>
+    </p>
+
+    <script>
+        function testarOptions() {
+
+            fetch("methods", {
+                method: "OPTIONS"
+            })
+            .then(response => {
+                alert("Status: " + response.status +
+                      "\nMetodos: " +
+                      response.headers.get("Allow"));
+            });
+        }
+    </script>
+
+    <hr>
+
+    <p>Desenvolvido para fins academicos.</p>
+
+</body>
+</html>
